@@ -1,0 +1,56 @@
+@use "src/themes/_vars" as vars;
+@use "src/themes/mixins/animations" as animations;
+
+$scale-animation-name: scale-button;
+$border-left-top-animation-name: border-left-top;
+$border-right-bottom-animation-name: border-right-bottom;
+
+.button {
+  background: vars.$green-primary;
+  min-height: 50px;
+  text-transform: capitalize;
+  border: none;
+  padding: 15px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.button-animated {
+  @include animations.scale-element($scale-animation-name, 0.8, 1);
+  @include animations.border-fill-element($border-left-top-animation-name, $border-right-bottom-animation-name , vars.$green-secondary);
+  position: relative;
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    background: transparent;
+    border: 5px solid transparent;
+  }
+
+  &:before {
+    bottom: -5px;
+    left: -5px;
+  }
+
+  &:after {
+    top: -5px;
+    right: -5px;
+  }
+
+  &:hover {
+    &:before {
+      animation: $border-left-top-animation-name .8s ease-in-out forwards;
+    }
+
+    &:after {
+      animation: $border-right-bottom-animation-name .8s .8s ease-in-out forwards;
+    }
+  }
+
+  &:active {
+    animation: $scale-animation-name .2s ease-in-out;
+  }
+}

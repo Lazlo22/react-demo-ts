@@ -1,0 +1,66 @@
+@mixin scale-element ($name, $from, $to) {
+  @keyframes #{$name} {
+    50% {
+      transform: scale($from);
+    }
+    100% {
+      transform: scale($to);
+    }
+  }
+}
+
+@mixin border-fill-element ($left-top-name, $right-bottom-name, $color) {
+  @keyframes #{$left-top-name} {
+    0% {
+      width: 0;
+      height: 0;
+      border-top-color: transparent;
+      border-right-color: transparent;
+      border-bottom-color: transparent;
+      border-left-color: $color;
+    }
+    50% {
+      width: 0;
+      height: 100%;
+      border-top-color: $color;
+      border-right-color: transparent;
+      border-bottom-color: transparent;
+      border-left-color: $color;
+    }
+    100% {
+      width: 100%;
+      height: 100%;
+      border-top-color: $color;
+      border-right-color: transparent;
+      border-bottom-color: transparent;
+      border-left-color: $color;
+    }
+  }
+
+  @keyframes #{$right-bottom-name} {
+    0% {
+      width: 0;
+      height: 0;
+      border-top-color: transparent;
+      border-right-color: $color;
+      border-bottom-color: transparent;
+      border-left-color: transparent;
+    }
+    50% {
+      width: 0;
+      height: 100%;
+      border-top-color: transparent;
+      border-right-color: $color;
+      border-bottom-color: $color;
+      border-left-color: transparent;
+    }
+    100% {
+      width: 100%;
+      height: 100%;
+      border-top-color: transparent;
+      border-right-color: $color;
+      border-bottom-color: $color;
+      border-left-color: transparent;
+    }
+  }
+}
