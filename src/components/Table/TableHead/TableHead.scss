@@ -1,0 +1,18 @@
+@use "../../../themes/vars" as vars;
+
+.table-head {
+  background-color: vars.$blue-primary;
+  color: vars.$black;
+
+  .table-head-data {
+    border: 2px vars.$black solid;
+    text-transform: capitalize;
+    text-align: left;
+    padding: 10px;
+    min-width: 300px;
+  }
+
+  .table-head-data-sortable {
+    cursor: pointer;
+  }
+}

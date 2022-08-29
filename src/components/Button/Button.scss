@@ -17,7 +17,7 @@ $border-right-bottom-animation-name: border-right-bottom;
 
 .button-animated {
   @include animations.scale-element($scale-animation-name, 0.8, 1);
-  @include animations.border-fill-element($border-left-top-animation-name, $border-right-bottom-animation-name , vars.$green-secondary);
+  @include animations.border-fill-element($border-left-top-animation-name, $border-right-bottom-animation-name, vars.$green-secondary);
   position: relative;
 
   &:before,

@@ -1,0 +1,8 @@
+@use "src/themes/_vars" as vars;
+
+.table {
+  border: 1px solid #333;
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: auto;
+}

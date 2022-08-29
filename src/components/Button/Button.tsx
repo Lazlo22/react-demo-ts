@@ -2,12 +2,16 @@ import React from 'react';
 
 import './Button.scss';
 
-const Button = () => {
+interface IButton {
+    title: string;
+}
+
+const Button = ({title}: IButton) => {
     return (
         <button className='button button-animated'>
-            press me!
+            {title}
         </button>
     );
 };
 
-export default Button ;
+export default Button;
