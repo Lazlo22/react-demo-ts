@@ -17,13 +17,14 @@ const TableBody = ({tableData, columns}: ITableBody) => {
                 <tr key={index}>
                     {columns.map(({tableDataAccessor}) => {
                         const tableData = tableDataItem[tableDataAccessor] || '';
+                        const isDateItem = tableDataAccessor === 'date';
 
                         return (
                             <td
                                 key={tableDataAccessor}
                                 className='table-data'
                             >
-                                {tableDataAccessor === 'date' ? convertUnixToDayMonthYearTime(tableData as number) : tableData}
+                                {isDateItem ? convertUnixToDayMonthYearTime(tableData as number) : tableData}
                             </td>
                         );
                     })}
